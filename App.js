@@ -11,7 +11,10 @@ export default function App() {
   return (
     <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={zipCodeScreen}/>
+          <Stack.Screen name="Home" component={zipCodeScreen} options={{
+              headerTitleStyle: { 
+              alignSelf: 'center' },
+          }}/>
           <Stack.Screen name="Weather" component={WeatherScreen}/>
         </Stack.Navigator>
     </NavigationContainer>

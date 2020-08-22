@@ -4,13 +4,14 @@ import { View, Text , StyleSheet } from 'react-native'
 export default function Forecast(props) {
     return (
         <View>
+            <Text style={styles.mainText}>{props.name}</Text>
             <Text style={styles.mainText}>{props.main}</Text>
             <Text style={styles.descriptionText}>{props.description}</Text>
             <View style={{
                 flexDirection: 'row',
                 padding: 30,
                 }}>
-                <Text style={{paddingRight: 160}}></Text>
+                <Text style={{paddingRight: '15%'}}></Text>
                 <Text style={styles.tempText}>{props.temp}</Text>
                 <Text style={styles.celsiusText}> °C</Text>
             </View>
