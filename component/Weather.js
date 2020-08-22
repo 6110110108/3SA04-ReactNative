@@ -7,6 +7,9 @@ const imageTST = { uri: "https://cdn.cnn.com/cnnnext/dam/assets/150717140310-isl
 const imageCNX = { uri: "https://data.asiahighlights.com/image/travel-guide/thailand/chiangmai/chiang-mai-scenery.webp"};
 const imageKKC = { uri: "https://lh3.googleusercontent.com/proxy/nJKRSQ7LPSi0u1sn3btEhgWnptDPuqOcQ7k-LIaAzOn5gBBIqilMsz9YpHv4bWu0GT9nMxMGBfANmEc73MLbiFPMngntVwWwuS_QxRAgCuZPwWVMAO8piA5ZOrU"};
 const imageCHB = { uri: "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/hotel_photo/001/545/741/chonburi-standard.jpg"};
+const imageRYG = { uri: "https://www.tripsavvy.com/thmb/i-TXP5Gs5GLj1ztgT8sbrGUr5sU=/3992x2992/filters:no_upscale():max_bytes(150000):strip_icc()/rayong-thailand-beach-5c75871b46e0fb0001a9827c.jpg"};
+const imageCEI = { uri: "https://image.makewebeasy.net/makeweb/0/0OdDLgHXF/DefaultData/bigstock_Wat_Rong_Sua_Ten_Temple_With_B_265915834.jpg"};
+
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: 'main',
@@ -66,6 +69,22 @@ export default function Weather(props) {
     if(props.zipCode == 20000) {
         return (
             <ImageBackground source={imageCHB} style={styles.backdrop}>
+                <View style={styles.background}></View>                               
+                <Forecast {...forecastInfo}/>
+            </ImageBackground>
+        )
+    }
+    if(props.zipCode == 21000) {
+        return (
+            <ImageBackground source={imageRYG} style={styles.backdrop}>
+                <View style={styles.background}></View>                               
+                <Forecast {...forecastInfo}/>
+            </ImageBackground>
+        )
+    }
+    if(props.zipCode == 57000) {
+        return (
+            <ImageBackground source={imageCEI} style={styles.backdrop}>
                 <View style={styles.background}></View>                               
                 <Forecast {...forecastInfo}/>
             </ImageBackground>
