@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text , StyleSheet , Image, ImageBackground } from 'react-native'
+import { View, Text , StyleSheet , Image } from 'react-native'
 
 
 export default function Forecast(props) {
@@ -24,28 +24,34 @@ export default function Forecast(props) {
     }
     return (
         <View>
-            <Text style={styles.mainText}>{props.name}</Text>
+            <Text style={styles.nameText}>{props.name}, {props.country}</Text>
             <Text style={styles.mainText}>{props.main}</Text>
             <Text style={styles.descriptionText}>{props.description}</Text>
             <View style={{
                 flexDirection: 'row',
                 padding: 30,
                 }}>
-                <Text style={{paddingRight: '4%'}}></Text>
-                <Text style={styles.tempText}>Feels like: {valueC}</Text>
+                <Text style={{paddingRight: '3%'}}></Text>
+                <Text style={styles.tempText}>Temperature : {valueC}</Text>
                 <Text style={styles.celsiusText}> °C</Text>
             </View>
             <View style={{
                 flexDirection: 'row',
                 }}>
-                <Text style={{paddingRight: '29%'}}></Text>
-                <Text style={styles.tempText2}>{valueF} </Text>
+                <Text style={{paddingRight: '24%'}}></Text>
+                <Text style={styles.tempText3}>Feel like : {props.feelLike}</Text>
+            </View>
+            <View style={{
+                flexDirection: 'row',
+                }}>
+                <Text style={{paddingRight: '20%'}}></Text>
+                <Text style={styles.tempText2}>Fahrenheit : {valueF} </Text>
                 <Text style={styles.fahrenheitText}> °F</Text>
                 </View>
             <View style={styles.weatherImg}> 
                     <Image
                         source={statusWeatherImg}
-                        style={{ width: 200, height: 200, top: 35}}
+                        style={{ width: 200, height: 200, top: 10}}
                     />
             </View>
         </View>
@@ -53,6 +59,14 @@ export default function Forecast(props) {
 }
 
 const styles = StyleSheet.create ({
+    nameText: {
+        fontSize: 30,
+        color: 'white',
+        paddingTop: 25,
+        textAlign: 'center',
+        fontWeight: "bold",
+        color: '#add8e6'
+    },
     mainText: {
         fontSize: 30,
         color: 'white',
@@ -64,7 +78,6 @@ const styles = StyleSheet.create ({
         color: 'white',
         paddingTop: 30,
         textAlign: 'center',
-        
     },
     tempText: {
         color: 'white',
@@ -72,7 +85,11 @@ const styles = StyleSheet.create ({
     },
     tempText2: {
         color: 'white',
-        fontSize: 25,
+        fontSize: 20,
+    },
+    tempText3: {
+        color: 'white',
+        fontSize: 20,
     },
     celsiusText: {
         fontSize: 20,

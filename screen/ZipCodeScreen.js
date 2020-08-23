@@ -29,7 +29,7 @@ const ZipItem = ({place, code, pic, navigation}) => (
         <View style={styles.zipItem}>
             <ImageBackground source={pic} style={styles.backdrop}></ImageBackground>
             <Text>{place}</Text>
-            <Text>{code}</Text>
+            <Text>Zip Code : {code}</Text>
         </View>
     </TouchableHighlight>
 )

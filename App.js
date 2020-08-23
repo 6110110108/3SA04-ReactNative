@@ -13,9 +13,10 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={zipCodeScreen} options={{
               headerTitleStyle: { alignSelf: 'center'},
+              headerStyle: {backgroundColor : "#add8e6" } , headerTintColor: 'black'
           }}/>
           <Stack.Screen name="Weather" component={WeatherScreen} options={{
-              headerTitleStyle: { alignSelf: 'center'},
+              headerStyle: {backgroundColor : "#add8e6" } , headerTintColor: 'black'
           }}/>
         </Stack.Navigator>
     </NavigationContainer>

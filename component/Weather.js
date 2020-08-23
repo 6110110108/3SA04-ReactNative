@@ -1,5 +1,5 @@
 import React, { useState , useEffect } from 'react'
-import { Text, ImageBackground, StyleSheet, View } from 'react-native'
+import { ImageBackground, StyleSheet, View } from 'react-native'
 import Forecast from './Forecast'
 
 const imageHDY = { uri: "https://static.asiawebdirect.com/m/phuket/portals/thaiwave-com/homepage/hat-yai/allParagraphs/BucketComponent/ListingContainer/01/image/hat-yai-attractions.jpg" };
@@ -15,7 +15,9 @@ export default function Weather(props) {
         main: 'main',
         description: 'description',
         temp: 0,
-        name: 'name'
+        feelLike: 0,
+        name: 'name',
+        country: 'country'
     })
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
@@ -27,7 +29,9 @@ export default function Weather(props) {
                     main: json.weather[0].main,
                     description: json.weather[0].description,
                     temp: json.main.temp,
-                    name: json.name});
+                    feelLike: json.main.feels_like,
+                    name: json.name,
+                    country: json.sys.country});
                 })
             .catch((error) => {
                 console.warn(error);
