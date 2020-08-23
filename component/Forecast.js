@@ -38,13 +38,14 @@ export default function Forecast(props) {
             <View style={{
                 flexDirection: 'row',
                 }}>
-                <Text style={{paddingRight: '24%'}}></Text>
+                <Text style={{paddingRight: '23%'}}></Text>
                 <Text style={styles.tempText3}>Feel like : {props.feelLike}</Text>
+                <Text style={styles.celsiusText}> °C</Text>
             </View>
             <View style={{
                 flexDirection: 'row',
                 }}>
-                <Text style={{paddingRight: '20%'}}></Text>
+                <Text style={{paddingRight: '21%'}}></Text>
                 <Text style={styles.tempText2}>Fahrenheit : {valueF} </Text>
                 <Text style={styles.fahrenheitText}> °F</Text>
                 </View>
