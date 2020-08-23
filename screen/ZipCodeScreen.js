@@ -1,8 +1,9 @@
 import React from 'react'
-import { FlatList, View , Text , StyleSheet, Alert } from 'react-native'
+import { FlatList, View , Text , StyleSheet, StatusBar , SafeAreaView, ImageBackground } from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
+const image = { uri: "https://c4.wallpaperflare.com/wallpaper/759/428/990/uplifting-rays-of-sunshine-wallpaper-preview.jpg" };
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
     { place: 'Trang', code: '92000' },
@@ -26,11 +27,15 @@ const ZipItem = ({place, code, navigation}) => (
 export default function zipCodeScreen() {
     const navigation = useNavigation()
     return (
-        <FlatList
-            data = {availableZipItems} 
-            keyExtractor = {item => item.code} 
-            renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
-        />
+        <ImageBackground source={image} style={styles.image}>
+            <SafeAreaView style={styles.container}>
+                <FlatList
+                    data = {availableZipItems} 
+                    keyExtractor = {item => item.code} 
+                    renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
+                />
+            </SafeAreaView>
+        </ImageBackground>
     )
 }
 
@@ -45,5 +50,13 @@ const styles = StyleSheet.create({
     },
     zipCode: {
         flex: 1,
+    },
+    container: {
+        flex: 1,
+    },
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
     },
 })
