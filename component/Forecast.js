@@ -6,6 +6,7 @@ export default function Forecast(props) {
     var fahrenheit = props.temp*(9/5) + 32
     var valueF = fahrenheit.toFixed(1);
     var valueC = props.temp.toFixed(1);
+    var feelL = props.feelLike.toFixed(1);
     var statusWeatherImg = '';
     if(props.main == 'Clouds') {
         statusWeatherImg = require('../Clouds.png')
@@ -39,7 +40,7 @@ export default function Forecast(props) {
                 flexDirection: 'row',
                 }}>
                 <Text style={{paddingRight: '23%'}}></Text>
-                <Text style={styles.tempText3}>Feel like : {props.feelLike}</Text>
+                <Text style={styles.tempText3}>Feel like : {feelL}</Text>
                 <Text style={styles.celsiusText}> °C</Text>
             </View>
             <View style={{
